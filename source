@@ -18,8 +18,8 @@ end
     else
         getgenv().toggle = false
 while task.wait() do
-    if toggle == false then
-        game.Players.LocalPlayer.Character.Humanoid.Jump = false
+    if toggle == true then
+        game.Players.LocalPlayer.Character.Humanoid.Jump = true
     else
         break
     end
@@ -30,9 +30,14 @@ MainSection:NewToggle("Gravity", "Gravity", function(state)
     if state then
         Workspace.Gravity = 1000
     else
-        Workspace.Gravity = 100
+        Workspace.Gravity = 150
     end
 end)
 MainSection:NewButton("AntiAfk", "Makes it so you dont get kicked for being afk", function()
     loadstring(game:HttpGet("https://pastebin.com/raw/sDXcYFhR", true))()
+end)
+local Settings = Window:NewTab("Settings")
+local SettingsSection = Settings:NewSection("Settings")
+SettingsSection:NewKeybind("Gui toggle", "Toggle the gui on and off", Enum.KeyCode.V, function()
+    Library:ToggleUI()
 end)
