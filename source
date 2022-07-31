@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Chaotic Bean Simulator BETA", "DarkTheme")
+local Window = Library.CreateLib("Bean Hub BETA", "BloodTheme")
 
 --Main
 local Main = Window:NewTab("Main")
