@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Bean Hub BETA", "BloodTheme")
+local Window = Library.CreateLib("Bean Hub BETA", "DarkTheme")
 
 --Main
 local Main = Window:NewTab("Main")
@@ -26,6 +26,31 @@ while task.wait() do
 end
     end
 end)
+MainSection:NewToggle("Gummy AutoFarm", "Auto collect gummydrops", function(state)
+    if state then
+        getgenv().toggle1 = true
+while task.wait() do
+    if getgenv().toggle1 then
+        for i, v in pairs(game:GetService("Workspace").Floor:GetDescendants()) do
+            if v.Name == "GumdropHitbox" and v:IsA("Part") then
+                game.Players.LocalPlayer.Character.Bean.CFrame = v.CFrame
+            end
+        end
+    end
+end
+    else
+        getgenv().toggle1 = false
+while task.wait() do
+    if getgenv().toggle1 then
+        for i, v in pairs(game:GetService("Workspace").Floor:GetDescendants()) do
+            if v.Name == "GumdropHitbox" and v:IsA("Part") then
+                game.Players.LocalPlayer.Character.Bean.CFrame = v.CFrame
+            end
+        end
+    end
+end
+    end
+end)
 MainSection:NewToggle("Gravity", "Gravity", function(state)
     if state then
         Workspace.Gravity = 1000
@@ -36,8 +61,16 @@ end)
 MainSection:NewButton("AntiAfk", "Makes it so you dont get kicked for being afk", function()
     loadstring(game:HttpGet("https://pastebin.com/raw/sDXcYFhR", true))()
 end)
+local Tab = Window:NewTab("Scripts")
 local Settings = Window:NewTab("Settings")
 local SettingsSection = Settings:NewSection("Settings")
 SettingsSection:NewKeybind("Gui toggle", "Toggle the gui on and off", Enum.KeyCode.V, function()
     Library:ToggleUI()
+end)
+local ScriptsSection = Tab:NewSection("Scripts")
+ScriptsSection:NewButton("Inf Yeild", "Loads infiniteyield", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+ScriptsSection:NewButton("Vapev4", "Loads Vapev4", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
 end)
