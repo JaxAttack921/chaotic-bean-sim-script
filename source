@@ -115,7 +115,7 @@ MainSection:NewToggle("ToggleText", "ToggleInfo", function(state)
 while task.wait() do
     if getgenv().toggle then
         while wait() do
-   game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("e","All") 
+   game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("monkey hub on top 🐒🐒🐒🐒🐒 ","All") 
 end
     else
         break
@@ -126,7 +126,7 @@ end
 while task.wait() do
     if getgenv().toggle then 
         while wait() do 
-   game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("e","All") 
+   game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("monkey hub on top 🐒🐒🐒🐒🐒 ","All") 
 end
     else
         break
