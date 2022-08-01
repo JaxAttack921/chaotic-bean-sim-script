@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("🐒 Monkeys Chaotic Bean Simulator ", "DarkTheme")
+local Window = Library.CreateLib("🐒 Moneky Hub ", "DarkTheme")
 
 --Main
 local Main = Window:NewTab("Main")
@@ -73,4 +73,37 @@ ScriptsSection:NewButton("Inf Yeild", "Loads infiniteyield", function()
 end)
 ScriptsSection:NewButton("Vapev4", "Loads Vapev4", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+end)
+MainSection:NewButton("AutoAbility", "Does all 3 of your abilitys using a autoclicker is reccomended", function()
+    game:GetService("ReplicatedStorage").RemoteFunctions.UseAbility:InvokeServer("Spin",true)
+
+game:GetService("ReplicatedStorage").RemoteFunctions.UseAbility:InvokeServer("Dash",true)
+
+game:GetService("ReplicatedStorage").RemoteFunctions.UseAbility:InvokeServer("Launch",true)
+end)
+
+MainSection:NewButton("AutoBounce", "Sends packets that you have bounced giving you xp", function()
+    while wait() do
+   game:GetService("ReplicatedStorage").Events.OnLandFromJump:FireServer()
+end
+end)
+MainSection:NewButton("AutoTrampoline", "Sends packets that you are on a trampoline giving you xp", function()
+    while wait() do
+   game:GetService("ReplicatedStorage").Events.InteractObject:FireServer(workspace.Gimmicks.AngledSpring.Model.BouncePad.BouncePad)
+end
+end)
+MainSection:NewButton("AutoRing", "Gives you xp from sending ring packets", function()
+    getgenv().toggle = true
+while task.wait() do
+    if getgenv().toggle then
+        game:GetService("ReplicatedStorage").Events.InteractObject:FireServer(workspace.Gimmicks.WarpTrickRing.TrickRingHitbox)
+    else
+        break
+    end
+end
+end)
+MainSection:NewButton("AutoBumper", "ButtonInfo", function()
+        while wait() do
+   game:GetService("ReplicatedStorage").Events.InteractObject:FireServer(workspace.Gimmicks.Bumper)
+end
 end)
